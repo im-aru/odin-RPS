@@ -5,7 +5,7 @@ function getComputerChoice(){
 
   //Randomly generate a number
   let randomNumber = Math.random();
-  console.log('The randomly generated number is ' + randomNumber);
+  // console.log('The randomly generated number is ' + randomNumber);
 
   //Assign the computer's decision of rock, paper, or scissors based on the generated number.
   switch (true) {
@@ -46,14 +46,18 @@ function playRockPaperScissors(playerChoice , computerChoice){
     case (playerChoice === computerChoice):
       alert('The result is a tie! Please try again.');
       return playRockPaperScissors();
-    case (playerChoice === 'rock' && computerChoice === 'scissor'): return 'You win! Rock beats scissors.';
+    case (playerChoice === 'rock' && computerChoice === 'scissors'): return 'You won! Rock beats scissors.';
     case (playerChoice === 'rock' && computerChoice === 'paper'): return 'You lost. Paper beats rock.';
+    case (playerChoice === 'paper' && computerChoice === 'rock'): return 'You won! Paper beats rock.';
+    case (playerChoice === 'paper' && computerChoice === 'scissors'): return 'You lost. Scissors beat paper.';
+    case (playerChoice === 'scissors' && computerChoice === 'paper'): return 'You won! scissors beat paper.';
+    case (playerChoice === 'scissors' && computerChoice === 'rock'): return 'You lost. Rock beats scissors.';
+    default: alert('Something went wrong. Please reload the page and try again.');
   }
 }
 
-playRockPaperScissors();
-
-
+//Create a variable to store the results of the game
+let gameResult;
 
 //Create a variable to store the user's choice
 let playerChoice;
